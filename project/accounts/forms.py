@@ -3,7 +3,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from allauth.account.forms import SignupForm
 from django.contrib.auth.models import Group
-from django.core.mail import EmailMultiAlternatives
+from django.core.mail import EmailMultiAlternatives, mail_managers
 
 
 class SignUpForm(UserCreationForm):
@@ -38,6 +38,11 @@ class CustomSignupForm(SignupForm):
         )
         msg.attach_alternative(html, "text/html")
         msg.send()
+        
+        mail_managers(
+            subject='NEW USER!',
+            message=f'User {user.username} registered on our project'
+        )
         
         common_users = Group.objects.get(name="common users")
         user.groups.add(common_users)

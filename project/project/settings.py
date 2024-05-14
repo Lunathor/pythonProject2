@@ -163,3 +163,9 @@ EMAIL_USE_TLS = False
 EMAIL_USE_SSL = True
 
 DEFAULT_FROM_EMAIL = "HoneyLunathor@yandex.com"
+
+# MAIL_MANAGERS
+SERVER_EMAIL = "HoneyLunathor@yandex.com"
+MANAGERS = (
+    ('Ivan', 'mrcoopgmz@gmail.com'),
+)
