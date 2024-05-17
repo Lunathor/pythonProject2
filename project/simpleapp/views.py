@@ -73,7 +73,7 @@ def subscriptions(request):
             ).delete()
     
     categories_with_subscriptions = Category.objects.annotate(
-        user_subscrib=Exists(
+        user_subscribed=Exists(
             Subscription.objects.filter(
                 user=request.user,
                 category=OuterRef('pk'),
