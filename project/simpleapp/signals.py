@@ -27,7 +27,7 @@ def product_created(instance, created, **kwargs):
     html_content = (
         f'Товар: {instance.name}<br>'
         f'Цена: {instance.price}<br><br>'
-        f'<a href="http://127.0.0.1{instance.get_absolute_url()}">Ссылка на товар</a>'
+        f'<a href="http://127.0.0.1:8000{instance.get_absolute_url()}">Ссылка на товар</a>'
     )
     for email in emails:
         msg = EmailMultiAlternatives(subject, text_content, None, [email])

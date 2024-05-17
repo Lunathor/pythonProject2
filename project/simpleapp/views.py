@@ -69,7 +69,7 @@ def subscriptions(request):
         elif action == 'unsubscribe':
             Subscription.objects.filter(
                 user=request.user,
-                category=OuterRef('pk'),
+                category=category,
             ).delete()
     
     categories_with_subscriptions = Category.objects.annotate(
