@@ -9,7 +9,7 @@ from django_apscheduler import util
 from django_apscheduler.jobstores import DjangoJobStore
 from django_apscheduler.models import DjangoJobExecution
 
-from project.simpleapp.models import Product
+from simpleapp.models import Product
 
 logger = logging.getLogger(__name__)
 
